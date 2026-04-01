@@ -48,16 +48,16 @@ function Contact() {
       title="Contact"
       subtitle="Have a role or project in mind? Send a message and let's collaborate."
     >
-      <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8 dark:border-slate-800 dark:bg-slate-900">
+      <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-4 md:p-6 md:p-8 dark:border-slate-800 dark:bg-slate-900">
         <form onSubmit={onSubmit} className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-3 md:gap-4 md:grid-cols-2">
             <input
               name="name"
               value={form.name}
               onChange={onChange}
               required
               placeholder="Your Name"
-              className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-500 dark:border-slate-700 dark:bg-slate-950"
+              className="rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500 dark:border-slate-700 dark:bg-slate-950 md:px-4 md:py-3"
             />
             <input
               type="email"
@@ -66,7 +66,7 @@ function Contact() {
               onChange={onChange}
               required
               placeholder="Your Email"
-              className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-500 dark:border-slate-700 dark:bg-slate-950"
+              className="rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500 dark:border-slate-700 dark:bg-slate-950 md:px-4 md:py-3"
             />
           </div>
           <input
@@ -82,9 +82,9 @@ function Contact() {
             value={form.message}
             onChange={onChange}
             required
-            rows={5}
+            rows={4}
             placeholder="Message"
-            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-500 dark:border-slate-700 dark:bg-slate-950"
+            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-500 dark:border-slate-700 dark:bg-slate-950 md:px-4 md:py-3"
           />
           <button
             type="submit"

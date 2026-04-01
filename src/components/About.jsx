@@ -9,14 +9,14 @@ function About({ education, awards }) {
       title="About"
       subtitle="Business Information Technology graduate with a strong foundation in analytics, business operations, and technology-enabled decision making."
     >
-      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="grid gap-6 lg:gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <motion.div
           whileHover={{ y: -4 }}
           transition={{ duration: 0.25 }}
-          className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+          className="rounded-2xl border border-slate-200 bg-white p-4 md:p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900"
         >
           <h3 className="mb-4 text-lg font-semibold text-slate-900 dark:text-slate-50">Profile</h3>
-          <div className="group relative mx-auto max-w-xs overflow-hidden rounded-2xl border border-slate-200 shadow-md dark:border-slate-700">
+          <div className="group relative mx-auto max-w-xs overflow-hidden rounded-2xl border border-slate-200 shadow-md dark:border-slate-700 md:max-w-md md:mx-0">
             <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-brand-900/35 via-transparent to-transparent opacity-80" />
             <img
               src="/mercy.jpeg"
@@ -49,10 +49,10 @@ function About({ education, awards }) {
           </div>
 
           <div className="relative">
-            {/* Centered Timeline line */}
-            <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-gradient-to-b from-brand-500 via-violet-500 to-cyan-500 md:block hidden" />
+            {/* Mobile: Hidden timeline line */}
+            <div className="absolute left-4 top-0 h-full w-0.5 bg-gradient-to-b from-brand-500 via-violet-500 to-cyan-500 md:left-1/2 md:block" />
 
-            <div className="space-y-8 md:space-y-12">
+            <div className="space-y-6 md:space-y-12">
               {education.map((item, index) => {
                 const isEven = index % 2 === 0;
                 const educationParts = item.match(/^(.+?) - (.+?) \((\d{4}(?:-\d{4})?)\), (.+)$/);
@@ -64,7 +64,7 @@ function About({ education, awards }) {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className={`relative ${isEven ? 'md:justify-start' : 'md:justify-end'} md:flex items-center`}
+                    className={`relative flex ${isEven ? 'justify-start' : 'justify-end'} md:items-center`}
                   >
                     {/* Mobile: Left-aligned timeline, Desktop: Directional Timeline dot */}
                     <div className="md:hidden">
@@ -78,14 +78,14 @@ function About({ education, awards }) {
                         viewport={{ once: true }}
                         transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
                         className={`absolute top-1/2 h-4 w-4 -translate-y-1/2 rounded-full border-4 border-white bg-gradient-to-br from-brand-500 to-violet-600 shadow-lg dark:border-slate-900 z-10 ${isEven
-                            ? 'left-[calc(50%-8px)]'
-                            : 'left-[calc(50%+4px)]'
+                          ? 'left-[calc(50%-8px)]'
+                          : 'left-[calc(50%+4px)]'
                           }`}
                       >
                         {/* Directional pointer */}
                         <div className={`absolute top-1/2 h-3 w-3 -translate-y-1/2 border-y-2 border-y-transparent ${isEven
-                            ? 'left-full border-l-4 border-l-brand-500'
-                            : 'right-full border-r-4 border-r-brand-500'
+                          ? 'left-full border-l-4 border-l-brand-500'
+                          : 'right-full border-r-4 border-r-brand-500'
                           }`}></div>
                       </motion.div>
                     </div>
@@ -93,9 +93,9 @@ function About({ education, awards }) {
                     {/* Content card */}
                     <motion.div
                       whileHover={{ y: -3, scale: 1.02 }}
-                      className={`w-full md:w-5/12 ${isEven ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'} pl-8`}
+                      className={`w-full md:w-5/12 ${isEven ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'} pl-4 pr-8`}
                     >
-                      <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-4 md:p-5 shadow-md transition-all hover:shadow-lg dark:border-slate-800 dark:from-slate-900 dark:to-slate-800">
+                      <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-3 md:p-4 shadow-md transition-all hover:shadow-lg dark:border-slate-800 dark:from-slate-900 dark:to-slate-800">
                         {educationParts ? (
                           <>
                             <div className={`mb-2 flex flex-col gap-1 ${isEven ? 'md:items-end' : 'md:items-start'}`}>
@@ -106,7 +106,7 @@ function About({ education, awards }) {
                                 {educationParts[2]}
                               </span>
                             </div>
-                            <h4 className={`font-semibold text-slate-900 dark:text-white mb-2 ${isEven ? 'md:text-right' : 'md:text-left'}`}>
+                            <h4 className={`font-semibold text-slate-900 dark:text-white ${isEven ? 'md:text-right' : 'md:text-left'}`}>
                               {educationParts[1]}
                             </h4>
                             <p className={`text-sm text-slate-600 dark:text-slate-300 ${isEven ? 'md:text-right' : 'md:text-left'}`}>
