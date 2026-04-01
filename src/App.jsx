@@ -151,7 +151,7 @@ const awards = [
 ];
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 140, damping: 25, restDelta: 0.001 });
@@ -161,7 +161,7 @@ function App() {
     const isDark =
       stored !== null
         ? stored === "dark"
-        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        : false; // Default to light theme
     setDarkMode(isDark);
   }, []);
 
