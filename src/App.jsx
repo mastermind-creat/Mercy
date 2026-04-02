@@ -109,33 +109,6 @@ const skillGroups = [
   },
 ];
 
-const projectData = [
-  {
-    title: "Construction Compliance Dashboard",
-    description:
-      "An internal KPI dashboard concept for tracking compliance trends and project performance metrics.",
-    tags: ["Data Visualization", "Reporting", "KPI"],
-    demo: "#",
-    github: "#",
-  },
-  {
-    title: "Community Program Insights",
-    description:
-      "A data collection and analysis workflow for volunteer programs, improving reporting consistency.",
-    tags: ["Surveys", "Data Quality", "Impact Reporting"],
-    demo: "#",
-    github: "#",
-  },
-  {
-    title: "Student Records Optimization",
-    description:
-      "A structured records management system prototype that improved retrieval and tracking efficiency.",
-    tags: ["Spreadsheets", "Data Ops", "Process Improvement"],
-    demo: "#",
-    github: "#",
-  },
-];
-
 const educationData = [
   "Bachelor of Business Information Technology - Strathmore University (2019-2023), Second Class Upper (69.45)",
   "Certificate in Business Management & Data Analytics - ESMT Berlin (Jul-Aug 2023)",
@@ -235,7 +208,7 @@ function App() {
             <About education={educationData} awards={awards} />
             <Experience items={experienceData} />
             <Skills groups={skillGroups} />
-            <Projects items={projectData} />
+            <Projects />
             <Contact />
           </main>
 
